@@ -1,0 +1,255 @@
+{
+  "version": "1.0.0",
+  "skills": [
+    {
+      "id": "shift-calendar-pro",
+      "name": "Shift-to-Calendar",
+      "description": "Extracts work shifts from photos/text and adds them to your iCloud Calendar.",
+      "author": "Nexus Essentials",
+      "category": "Office",
+      "icon": "calendar.badge.plus",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/shift_calendar.nexus",
+      "isPro": false
+    },
+    {
+      "id": "biz-card-scanner",
+      "name": "Business Card Guru",
+      "description": "Turn photos of business cards into real contacts in your address book.",
+      "author": "Nexus Essentials",
+      "category": "Office",
+      "icon": "person.crop.circle.badge.plus",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/biz_card.nexus",
+      "isPro": false
+    },
+    {
+      "id": "smart-todo-ai",
+      "name": "AI Todo Creator",
+      "description": "Converts messy notes into a structured list in Apple Reminders.",
+      "author": "Nexus Essentials",
+      "category": "Office",
+      "icon": "list.bullet.rectangle",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/smart_todo.nexus",
+      "isPro": false
+    },
+    {
+      "id": "invoice-extractor",
+      "name": "Invoice Master",
+      "description": "Extracts amounts, IBANs, and dates from invoice scans.",
+      "author": "Nexus Essentials",
+      "category": "Data",
+      "icon": "doc.text.below.ecg",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/invoice_ext.nexus",
+      "isPro": true
+    },
+    {
+      "id": "bullet-summarizer",
+      "name": "3-Point Summary",
+      "description": "Boils down any long text into exactly three key bullet points.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "text.justify.left",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/summary.nexus",
+      "isPro": false
+    },
+    {
+      "id": "tone-fixer",
+      "name": "Professional Tone",
+      "description": "Rewrites casual or messy text into a professional email style.",
+      "author": "Nexus Essentials",
+      "category": "Social",
+      "icon": "mouth.fill",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/tone_fixer.nexus",
+      "isPro": false
+    },
+    {
+      "id": "json-beauty",
+      "name": "JSON Beautifier",
+      "description": "Turns minified JSON strings into perfectly indented, readable code.",
+      "author": "Nexus Essentials",
+      "category": "Dev",
+      "icon": "curlybraces",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/json_beauty.nexus",
+      "isPro": false
+    },
+    {
+      "id": "swift-model-gen",
+      "name": "Swift Struct Gen",
+      "description": "Automatically generates Swift models from JSON payloads.",
+      "author": "Nexus Essentials",
+      "category": "Dev",
+      "icon": "swift",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/swift_gen.nexus",
+      "isPro": true
+    },
+    {
+      "id": "url-cleaner",
+      "name": "Privacy URL",
+      "description": "Removes all tracking parameters (utm, fbclid) from shared links.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "link",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/url_clean.nexus",
+      "isPro": false
+    },
+    {
+      "id": "csv-to-markdown",
+      "name": "CSV Table Pro",
+      "description": "Converts Excel/CSV data into clean Markdown tables.",
+      "author": "Nexus Essentials",
+      "category": "Data",
+      "icon": "tablecells",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/csv_md.nexus",
+      "isPro": false
+    },
+    {
+      "id": "regex-explainer",
+      "name": "Regex Sensei",
+      "description": "Explains complex regular expressions in plain language.",
+      "author": "Nexus Essentials",
+      "category": "Dev",
+      "icon": "magnifyingglass",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/regex_help.nexus",
+      "isPro": false
+    },
+    {
+      "id": "deepl-translator",
+      "name": "DeepL Magic",
+      "description": "Uses DeepL API for perfect translations directly from clipboard.",
+      "author": "Nexus Essentials",
+      "category": "Social",
+      "icon": "globe",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/deepl.nexus",
+      "isPro": true
+    },
+    {
+      "id": "git-commit-muse",
+      "name": "Commit Muse",
+      "description": "Drafts professional Conventional Commit messages from your diffs.",
+      "author": "Nexus Essentials",
+      "category": "Dev",
+      "icon": "terminal.fill",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/git_muse.nexus",
+      "isPro": false
+    },
+    {
+      "id": "email-extractor",
+      "name": "Email Miner",
+      "description": "Finds and lists all unique email addresses in a large text block.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "envelope",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/email_miner.nexus",
+      "isPro": false
+    },
+    {
+      "id": "list-sorter",
+      "name": "Alpha-Sort",
+      "description": "Sorts lists alphabetically, removing any duplicates.",
+      "author": "Nexus Essentials",
+      "category": "Data",
+      "icon": "arrow.up.arrow.down",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/sort.nexus",
+      "isPro": false
+    },
+    {
+      "id": "anonymizer-ai",
+      "name": "Safe Share",
+      "description": "Replaces names and private data with placeholders using local AI.",
+      "author": "Nexus Essentials",
+      "category": "Data",
+      "icon": "eye.slash",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/anonymizer.nexus",
+      "isPro": true
+    },
+    {
+      "id": "wiki-teaser",
+      "name": "Wiki Look",
+      "description": "Fetches the summary of a term from Wikipedia instantly.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "book",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/wiki.nexus",
+      "isPro": false
+    },
+    {
+      "id": "base64-tool",
+      "name": "Base64 Wizard",
+      "description": "Encode or decode strings to/from Base64 format.",
+      "author": "Nexus Essentials",
+      "category": "Dev",
+      "icon": "arrow.left.arrow.right",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/base64.nexus",
+      "isPro": false
+    },
+    {
+      "id": "currency-calc",
+      "name": "Global Price",
+      "description": "Converts prices in text to your local currency (Live rates).",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "coloncurrencysign",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/currency.nexus",
+      "isPro": false
+    },
+    {
+      "id": "paywall-bypass-helper",
+      "name": "Clean Reader",
+      "description": "Attempts to find a clean, readable version of any news URL.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "lock.open",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/paywall.nexus",
+      "isPro": true
+    },
+    {
+      "id": "whois-checker",
+      "name": "Domain Guard",
+      "description": "Shows ownership and safety info for any website URL.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "network",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/whois.nexus",
+      "isPro": false
+    },
+    {
+      "id": "emoji-translator",
+      "name": "Social Tone",
+      "description": "Enriches your text with context-aware emojis for Social Media.",
+      "author": "Nexus Essentials",
+      "category": "Social",
+      "icon": "face.smiling",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/emoji.nexus",
+      "isPro": false
+    },
+    {
+      "id": "meeting-ext-cal",
+      "name": "Quick Meeting",
+      "description": "Takes a sentence like 'Lunch tomorrow at 1' and adds it to Calendar.",
+      "author": "Nexus Essentials",
+      "category": "Office",
+      "icon": "calendar.badge.clock",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/meeting.nexus",
+      "isPro": false
+    },
+    {
+      "id": "grammar-killer",
+      "name": "The Editor",
+      "description": "Fixes spelling and grammar while keeping your personal style.",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "checkmark.bubble",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/grammar.nexus",
+      "isPro": false
+    },
+    {
+      "id": "pro-pdf-summarizer",
+      "name": "PDF Deep Dive",
+      "description": "Advanced AI analysis for large PDF documents (summaries + takeaways).",
+      "author": "Nexus Essentials",
+      "category": "Utility",
+      "icon": "doc.text.magnifyingglass",
+      "downloadURL": "https://raw.githubusercontent.com/bananamats94/Nexus-Skills-Hub/main/skills/pdf_deep.nexus",
+      "isPro": true
+    }
+  ]
+}
