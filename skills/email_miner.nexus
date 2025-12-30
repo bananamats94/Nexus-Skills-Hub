@@ -1,0 +1,9 @@
+{
+  "name": "Email Miner",
+  "description": "Finds and lists all unique email addresses in a large text block.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const regex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g; const matches = input.match(regex); if (!matches) return 'No emails found.'; return Array.from(new Set(matches)).join('\n');",
+  "language": "javascript",
+  "timeout": 5,
+  "version": 1
+}

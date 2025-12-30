@@ -1,0 +1,9 @@
+{
+  "name": "CSV Table Pro",
+  "description": "Converts Excel/CSV data into clean Markdown tables.",
+  "author": "Nexus Essentials",
+  "sourceCode": "import sys\nlines = sys.stdin.read().split('\n')\n# Simple converter\nheader = '| ' + ' | '.join(lines[0].split(',')) + ' |'\nsep = '| ' + ' | '.join(['---']*len(lines[0].split(','))) + ' |'\nprint(header + '\n' + sep + '\n' + '\n'.join(['| ' + ' | '.join(l.split(',')) + ' |' for l in lines[1:] if l]))",
+  "language": "python",
+  "timeout": 10,
+  "version": 1
+}

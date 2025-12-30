@@ -1,0 +1,9 @@
+{
+  "name": "Quick Meeting",
+  "description": "Takes a sentence like 'Lunch tomorrow at 1' and adds it to Calendar.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const analysis = await nex.llm.generate('Extract meeting title, start time, and end time (1h later if not specified) from this text. Return ONLY a JSON object with keys: title, start, end. Use ISO8601 format. If date is relative to \"today\", use 2026-01-01.\n\nText: ' + input); const data = JSON.parse(analysis); return await nex.calendar.addEvent(data.title, data.start, data.end);",
+  "language": "javascript",
+  "timeout": 20,
+  "version": 1
+}

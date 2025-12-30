@@ -1,0 +1,9 @@
+{
+  "name": "Privacy URL",
+  "description": "Removes all tracking parameters (utm, fbclid) from shared links.",
+  "author": "Nexus Essentials",
+  "sourceCode": "try { const url = new URL(input); const bad = ['utm_source','utm_medium','utm_campaign','fbclid','gclid','msclkid']; bad.forEach(p => url.searchParams.delete(p)); return url.toString(); } catch(e) { return input; }",
+  "language": "javascript",
+  "timeout": 5,
+  "version": 1
+}

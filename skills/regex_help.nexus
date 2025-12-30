@@ -1,0 +1,9 @@
+{
+  "name": "Regex Sensei",
+  "description": "Explains complex regular expressions in plain language.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Explain what this regular expression (regex) does in simple, human terms. Break down each component.",
+  "language": "ai",
+  "timeout": 15,
+  "version": 1
+}

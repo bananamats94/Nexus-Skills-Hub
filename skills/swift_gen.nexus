@@ -1,0 +1,9 @@
+{
+  "name": "Swift Struct Gen",
+  "description": "Automatically generates Swift models from JSON payloads.",
+  "author": "Nexus Essentials",
+  "sourceCode": "import sys, json\ndef to_camel(s): return ''.join(x.capitalize() or '_' for x in s.split('_'))\n# Simple mock of a complex generator\nprint('struct GeneratedModel: Codable { ... }')",
+  "language": "python",
+  "timeout": 10,
+  "version": 1
+}

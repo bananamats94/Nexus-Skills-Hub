@@ -1,0 +1,10 @@
+{
+  "name": "Clean Reader",
+  "description": "Attempts to find a clean, readable version of any news URL.",
+  "author": "Nexus Essentials",
+  "sourceCode": "if (!input.startsWith('http')) return 'Not a valid URL.'; return 'https://12ft.io/' + input;",
+  "language": "javascript",
+  "triggerRegex": "^https?://",
+  "timeout": 5,
+  "version": 1
+}
