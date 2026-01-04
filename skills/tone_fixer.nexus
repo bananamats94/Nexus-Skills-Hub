@@ -1,9 +1,0 @@
-{
-  "name": "Professional Tone",
-  "description": "Rewrites casual or messy text into a professional email style.",
-  "author": "Nexus Essentials",
-  "sourceCode": "Rewrite the following text in a professional, polite, and clear corporate email tone.",
-  "language": "ai",
-  "timeout": 15,
-  "version": 1
-}

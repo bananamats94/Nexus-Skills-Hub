@@ -1,9 +1,0 @@
-{
-  "name": "Invoice Master",
-  "description": "Extracts amounts, IBANs, and dates from invoice scans.",
-  "author": "Nexus Essentials",
-  "sourceCode": "import sys, json\nraw = sys.stdin.read()\n# In a real pro script, we would use a more complex parser or local LLM prompt\nprint('Invoice analysis complete. Found amount and target IBAN.')",
-  "language": "python",
-  "timeout": 10,
-  "version": 1
-}

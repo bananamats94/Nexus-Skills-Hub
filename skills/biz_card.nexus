@@ -1,9 +1,0 @@
-{
-  "name": "Business Card Guru",
-  "description": "Turn photos of business cards into real contacts in your address book.",
-  "author": "Nexus Essentials",
-  "sourceCode": "const analysis = await nex.llm.generate('Extract contact info from this business card text. Return ONLY a JSON object with keys: first, last, phone, email.\n\nText: ' + input); const c = JSON.parse(analysis); return await nex.contacts.addContact(c.first, c.last, c.phone, c.email);",
-  "language": "javascript",
-  "timeout": 20,
-  "version": 1
-}

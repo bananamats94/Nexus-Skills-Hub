@@ -1,9 +1,0 @@
-{
-  "name": "PDF Deep Dive",
-  "description": "Advanced AI analysis for large PDF documents (summaries + takeaways).",
-  "author": "Nexus Essentials",
-  "sourceCode": "Analyze this PDF content. Provide a high-level summary and list the top 5 most important takeaways for a decision-maker.",
-  "language": "ai",
-  "timeout": 30,
-  "version": 1
-}

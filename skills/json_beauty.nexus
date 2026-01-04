@@ -1,9 +1,0 @@
-{
-  "name": "JSON Beautifier",
-  "description": "Turns minified JSON strings into perfectly indented, readable code.",
-  "author": "Nexus Essentials",
-  "sourceCode": "try { const obj = JSON.parse(input); return JSON.stringify(obj, null, 2); } catch(e) { return 'Invalid JSON: ' + e.message; }",
-  "language": "javascript",
-  "timeout": 5,
-  "version": 1
-}

@@ -1,9 +1,0 @@
-{
-  "name": "3-Point Summary",
-  "description": "Boils down any long text into exactly three key bullet points.",
-  "author": "Nexus Essentials",
-  "sourceCode": "Summarize the following text into exactly 3 concise bullet points. Be direct.",
-  "language": "ai",
-  "timeout": 15,
-  "version": 1
-}

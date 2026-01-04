@@ -1,9 +1,0 @@
-{
-  "name": "Safe Share",
-  "description": "Replaces names and private data with placeholders using local AI.",
-  "author": "Nexus Essentials",
-  "sourceCode": "Anonymize the following text by replacing all personal names, precise addresses, and phone numbers with placeholders like [NAME], [ADDRESS], [PHONE]. Keep the rest of the meaning intact.",
-  "language": "ai",
-  "timeout": 20,
-  "version": 1
-}

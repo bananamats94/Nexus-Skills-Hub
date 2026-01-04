@@ -1,9 +1,0 @@
-{
-  "name": "Global Price",
-  "description": "Converts prices in text to your local currency (Live rates).",
-  "author": "Nexus Essentials",
-  "sourceCode": "const analysis = await nex.llm.generate('Find the price and currency in this text. Convert it to EUR (use current average rates). Return ONLY the result like \"12.50 EUR\".\n\nText: ' + input); return analysis;",
-  "language": "javascript",
-  "timeout": 15,
-  "version": 1
-}

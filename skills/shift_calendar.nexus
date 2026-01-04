@@ -1,9 +1,0 @@
-{
-  "name": "Shift-to-Calendar",
-  "description": "Extracts work shifts from photos/text and adds them to your iCloud Calendar.",
-  "author": "Nexus Essentials",
-  "sourceCode": "const analysis = await nex.llm.generate('Extract work shifts for the user from this text. Return ONLY a JSON array of objects with keys: title, start, end. Use ISO8601 format. If year is missing, use 2026.\n\nText: ' + input); const shifts = JSON.parse(analysis); for (const s of shifts) { await nex.calendar.addEvent(s.title, s.start, s.end); } return 'Added ' + shifts.length + ' shifts to calendar.';",
-  "language": "javascript",
-  "timeout": 30,
-  "version": 1
-}
