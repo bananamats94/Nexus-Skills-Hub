@@ -1,0 +1,11 @@
+{
+  "name": "Table Extractor",
+  "description": "Extracts tables from documents and converts them to CSV or Markdown.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Extract all tables from this document and convert them to Markdown format. Each table should have:\n- Clear headers\n- Separator row with dashes\n- Properly aligned columns\n\nIf multiple tables exist, separate them with blank lines and a table number.",
+  "language": "ai",
+  "timeout": 30,
+  "version": 1,
+  "supportedTypes": ["pdf", "image", "text"],
+  "estimatedManualTimeSeconds": 240
+}

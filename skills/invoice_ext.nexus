@@ -1,0 +1,11 @@
+{
+  "name": "Invoice Master",
+  "description": "Extracts amounts, IBANs, and dates from invoice scans into structured JSON.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Extract the following information from this invoice and return ONLY valid JSON:\n{\n  \"invoice_number\": \"...\",\n  \"total_amount\": \"...\",\n  \"currency\": \"...\",\n  \"iban\": \"...\",\n  \"due_date\": \"...\",\n  \"vendor\": \"...\"\n}\n\nIf a field is not found, use null. Do not add any text before or after the JSON.",
+  "language": "ai",
+  "timeout": 30,
+  "version": 2,
+  "supportedTypes": ["pdf", "image", "text"],
+  "estimatedManualTimeSeconds": 300
+}

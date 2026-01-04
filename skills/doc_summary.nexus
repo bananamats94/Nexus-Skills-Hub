@@ -1,0 +1,11 @@
+{
+  "name": "Document Summarizer",
+  "description": "Creates executive summaries of long documents with key findings and action items.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Create a comprehensive executive summary of this document. Structure it as follows:\n\n## Executive Summary\n[2-3 sentences overview]\n\n## Key Findings\n- [Finding 1]\n- [Finding 2]\n- [Finding 3]\n\n## Recommendations\n- [Recommendation 1]\n- [Recommendation 2]\n\n## Action Items\n- [Action 1]\n- [Action 2]\n\nBe concise and focus on decision-critical information.",
+  "language": "ai",
+  "timeout": 40,
+  "version": 1,
+  "supportedTypes": ["pdf", "text", "markdown"],
+  "estimatedManualTimeSeconds": 600
+}

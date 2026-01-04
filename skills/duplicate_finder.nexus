@@ -1,0 +1,11 @@
+{
+  "name": "Duplicate Finder",
+  "description": "Finds duplicate lines or entries in lists and removes them.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const lines = input.split('\\n');\nconst seen = new Map();\nconst duplicates = [];\nconst unique = [];\n\nlines.forEach(line => {\n  const trimmed = line.trim();\n  if (!trimmed) return;\n  \n  if (seen.has(trimmed)) {\n    seen.set(trimmed, seen.get(trimmed) + 1);\n    if (!duplicates.includes(trimmed)) {\n      duplicates.push(trimmed);\n    }\n  } else {\n    seen.set(trimmed, 1);\n    unique.push(trimmed);\n  }\n});\n\nlet result = `Found ${duplicates.length} duplicate entries:\\n\\n`;\n\nif (duplicates.length > 0) {\n  result += '🔍 Duplicates:\\n';\n  duplicates.forEach(dup => {\n    result += `- \"${dup}\" (appears ${seen.get(dup)} times)\\n`;\n  });\n  result += `\\n✨ Unique list (${unique.length} items):\\n`;\n  result += unique.join('\\n');\n} else {\n  result += 'No duplicates found! ✅';\n}\n\nreturn result;",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 60
+}

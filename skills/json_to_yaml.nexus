@@ -1,0 +1,11 @@
+{
+  "name": "JSON to YAML",
+  "description": "Converts JSON to YAML format for configuration files.",
+  "author": "Nexus Essentials",
+  "sourceCode": "// Simple JSON to YAML converter\ntry {\n  const obj = JSON.parse(input);\n  \n  function toYAML(obj, indent = 0) {\n    const spaces = '  '.repeat(indent);\n    let yaml = '';\n    \n    if (Array.isArray(obj)) {\n      obj.forEach(item => {\n        if (typeof item === 'object') {\n          yaml += spaces + '-\\n';\n          yaml += toYAML(item, indent + 1);\n        } else {\n          yaml += spaces + '- ' + item + '\\n';\n        }\n      });\n    } else if (typeof obj === 'object' && obj !== null) {\n      Object.keys(obj).forEach(key => {\n        const value = obj[key];\n        if (typeof value === 'object' && value !== null) {\n          yaml += spaces + key + ':\\n';\n          yaml += toYAML(value, indent + 1);\n        } else {\n          yaml += spaces + key + ': ' + value + '\\n';\n        }\n      });\n    }\n    \n    return yaml;\n  }\n  \n  return toYAML(obj);\n} catch(e) {\n  return 'Invalid JSON: ' + e.message;\n}",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["code", "text"],
+  "estimatedManualTimeSeconds": 60
+}

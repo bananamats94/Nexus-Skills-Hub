@@ -1,0 +1,11 @@
+{
+  "name": "CSV to JSON",
+  "description": "Converts CSV/TSV data into properly formatted JSON arrays.",
+  "author": "Nexus Essentials",
+  "sourceCode": "// Parse CSV to JSON\nconst lines = input.trim().split('\\n');\nif (lines.length < 2) return 'Error: CSV must have at least a header and one data row';\n\n// Detect delimiter (comma or tab)\nconst delimiter = lines[0].includes('\\t') ? '\\t' : ',';\n\n// Parse header\nconst headers = lines[0].split(delimiter).map(h => h.trim().replace(/^\"|\"$/g, ''));\n\n// Parse rows\nconst result = [];\nfor (let i = 1; i < lines.length; i++) {\n  const line = lines[i].trim();\n  if (!line) continue;\n  \n  const values = line.split(delimiter).map(v => v.trim().replace(/^\"|\"$/g, ''));\n  const obj = {};\n  \n  headers.forEach((header, index) => {\n    obj[header] = values[index] || '';\n  });\n  \n  result.push(obj);\n}\n\nreturn JSON.stringify(result, null, 2);",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 90
+}

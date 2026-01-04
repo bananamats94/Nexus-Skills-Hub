@@ -1,0 +1,12 @@
+{
+  "name": "Wiki Look",
+  "description": "Fetches the summary of a term from Wikipedia instantly.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const term = input.trim(); const url = 'https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(term); const resp = await nativeFetch(url); const data = JSON.parse(resp); return data.extract || 'No definition found.';",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 60,
+  "networkAllowlist": "en.wikipedia.org"
+}

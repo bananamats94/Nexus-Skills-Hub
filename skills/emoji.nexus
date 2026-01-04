@@ -1,0 +1,11 @@
+{
+  "name": "Social Tone",
+  "description": "Enriches your text with context-aware emojis for Social Media.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Rewrite the following text for social media (Instagram/LinkedIn). Add relevant emojis and make it engaging.",
+  "language": "ai",
+  "timeout": 15,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 90
+}

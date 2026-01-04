@@ -1,0 +1,11 @@
+{
+  "name": "AI Todo Creator",
+  "description": "Converts messy notes into a structured list in Apple Reminders.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const analysis = await nex.llm.generate('Extract actionable tasks from this text. Return ONLY a JSON array of strings.\\n\\nText: ' + input); const tasks = JSON.parse(analysis); for (const t of tasks) { await nex.reminders.addReminder(t); } return 'Created ' + tasks.length + ' reminders.';",
+  "language": "javascript",
+  "timeout": 20,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 150
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Email Template Generator",
+  "description": "Converts bullet points or rough notes into polished professional emails.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Transform these notes into a professional email. Include:\n- Appropriate greeting\n- Clear subject line suggestion (in brackets at top)\n- Well-structured body with paragraphs\n- Professional closing\n- Polite and clear tone\n\nKeep it concise but complete.",
+  "language": "ai",
+  "timeout": 20,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 180
+}

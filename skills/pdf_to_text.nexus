@@ -1,0 +1,11 @@
+{
+  "name": "PDF to Clean Text",
+  "description": "Converts PDF documents to clean, searchable text while preserving structure.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Convert this PDF content to clean, readable text. Remove headers, footers, and page numbers. Preserve paragraph structure and formatting. Return only the text content.",
+  "language": "ai",
+  "timeout": 45,
+  "version": 1,
+  "supportedTypes": ["pdf"],
+  "estimatedManualTimeSeconds": 300
+}

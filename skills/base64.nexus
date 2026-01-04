@@ -1,0 +1,11 @@
+{
+  "name": "Base64 Wizard",
+  "description": "Encode or decode strings to/from Base64 format.",
+  "author": "Nexus Essentials",
+  "sourceCode": "try { if (input.match(/^[a-zA-Z0-9+/]*={0,2}$/)) { return atob(input); } else { return btoa(input); } } catch(e) { return 'Conversion failed: ' + e.message; }",
+  "language": "javascript",
+  "timeout": 5,
+  "version": 1,
+  "supportedTypes": ["text", "code"],
+  "estimatedManualTimeSeconds": 20
+}

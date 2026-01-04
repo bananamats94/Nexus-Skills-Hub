@@ -1,0 +1,11 @@
+{
+  "name": "Image Auto-Tagger",
+  "description": "Analyzes images and suggests relevant tags for organization (objects, colors, scene type).",
+  "author": "Nexus Essentials",
+  "sourceCode": "Analyze this image and generate descriptive tags. Focus on: main objects, colors, scene type, mood, and any visible text. Return as comma-separated tags (lowercase, max 10 tags). Example: sunset, ocean, beach, orange, pink, peaceful, vacation",
+  "language": "ai",
+  "timeout": 20,
+  "version": 1,
+  "supportedTypes": ["image"],
+  "estimatedManualTimeSeconds": 90
+}

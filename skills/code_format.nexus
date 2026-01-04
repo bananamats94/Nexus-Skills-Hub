@@ -1,0 +1,11 @@
+{
+  "name": "Code Formatter",
+  "description": "Auto-formats JavaScript, Swift, Python, and JSON code with proper indentation and style.",
+  "author": "Nexus Essentials",
+  "sourceCode": "// Detect language and format accordingly\nconst code = input.trim();\n\n// JSON formatter\nif (code.startsWith('{') || code.startsWith('[')) {\n  try {\n    const obj = JSON.parse(code);\n    return JSON.stringify(obj, null, 2);\n  } catch (e) {\n    // Not valid JSON, continue to other formatters\n  }\n}\n\n// For other languages, use basic formatting\nlet formatted = code;\n\n// Add indentation for common patterns\nformatted = formatted\n  .replace(/\\{/g, ' {\\n')\n  .replace(/\\}/g, '\\n}')\n  .replace(/;/g, ';\\n')\n  .replace(/\\n\\s*\\n/g, '\\n')  // Remove multiple blank lines\n  .split('\\n')\n  .map(line => line.trim())\n  .join('\\n');\n\n// Smart indentation\nconst lines = formatted.split('\\n');\nlet indentLevel = 0;\nconst indented = lines.map(line => {\n  if (line.includes('}')) indentLevel = Math.max(0, indentLevel - 1);\n  const result = '  '.repeat(indentLevel) + line;\n  if (line.includes('{')) indentLevel++;\n  return result;\n});\n\nreturn indented.join('\\n');",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["code", "text"],
+  "estimatedManualTimeSeconds": 90
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Shift Calendar Parser",
+  "description": "Extracts work shifts from schedule photos or text into structured calendar events.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Extract all work shifts from this schedule and return ONLY a valid JSON array:\n[\n  {\n    \"title\": \"Work Shift - Location\",\n    \"date\": \"2026-01-15\",\n    \"start_time\": \"09:00\",\n    \"end_time\": \"17:00\",\n    \"notes\": \"Any additional info\"\n  }\n]\n\nRules:\n- Use YYYY-MM-DD format for dates\n- Use 24-hour HH:MM format for times\n- If year is not specified, use 2026\n- Include location or department in title if visible\n- Return empty array [] if no shifts found\n\nDo not add any text before or after the JSON.",
+  "language": "ai",
+  "timeout": 30,
+  "version": 2,
+  "supportedTypes": ["image", "text"],
+  "estimatedManualTimeSeconds": 420
+}

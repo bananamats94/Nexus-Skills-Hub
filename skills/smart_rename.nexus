@@ -1,0 +1,11 @@
+{
+  "name": "Smart File Renamer",
+  "description": "Suggests meaningful filename based on content analysis (perfect for screenshots and downloads).",
+  "author": "Nexus Essentials",
+  "sourceCode": "Analyze this content and suggest a short, descriptive filename. Rules: Max 50 characters, use kebab-case (lowercase with hyphens), be specific and descriptive, no file extension. Reply with ONLY the filename, nothing else.",
+  "language": "ai",
+  "timeout": 15,
+  "version": 1,
+  "supportedTypes": ["text", "code", "image", "markdown"],
+  "estimatedManualTimeSeconds": 60
+}

@@ -1,0 +1,11 @@
+{
+  "name": "EXIF Data Extractor",
+  "description": "Extracts camera settings and metadata from photos (camera, date, location, settings).",
+  "author": "Nexus Essentials",
+  "sourceCode": "Analyze this image and extract any visible EXIF metadata. Return as JSON:\n{\n  \"camera\": \"Camera model\",\n  \"date_taken\": \"YYYY-MM-DD HH:MM:SS\",\n  \"location\": \"City, Country\",\n  \"settings\": {\n    \"iso\": \"value\",\n    \"aperture\": \"f/value\",\n    \"shutter_speed\": \"1/value\",\n    \"focal_length\": \"value mm\"\n  }\n}\n\nUse null for missing fields. Return only JSON.",
+  "language": "ai",
+  "timeout": 20,
+  "version": 1,
+  "supportedTypes": ["image"],
+  "estimatedManualTimeSeconds": 120
+}

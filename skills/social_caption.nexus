@@ -1,0 +1,11 @@
+{
+  "name": "Social Media Caption",
+  "description": "Generates engaging social media captions with hashtags from content or images.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Create an engaging social media caption based on this content. Include:\n\n**Main caption:** (2-3 sentences, engaging and conversational)\n\n**Hashtags:** #relevant #hashtags #here (5-8 hashtags)\n\n**Call to action:** (optional engaging question or prompt)\n\nTone: Professional but approachable, perfect for LinkedIn or Instagram.",
+  "language": "ai",
+  "timeout": 15,
+  "version": 1,
+  "supportedTypes": ["text", "image"],
+  "estimatedManualTimeSeconds": 120
+}

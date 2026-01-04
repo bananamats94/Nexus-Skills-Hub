@@ -1,0 +1,11 @@
+{
+  "name": "Commit Muse",
+  "description": "Drafts professional Conventional Commit messages from your diffs.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Analyze the following code change/diff and write a professional Conventional Commit message (e.g. feat: ..., fix: ...). Be concise.",
+  "language": "ai",
+  "timeout": 15,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 120
+}

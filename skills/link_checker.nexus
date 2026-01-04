@@ -1,0 +1,11 @@
+{
+  "name": "Link Checker",
+  "description": "Extracts all URLs from text and validates if they're still accessible.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const urlRegex = /https?:\\/\\/[^\\s<>\"]+/g;\nconst urls = input.match(urlRegex) || [];\n\nif (urls.length === 0) return 'No URLs found in text';\n\nconst uniqueUrls = Array.from(new Set(urls));\nlet result = `Found ${uniqueUrls.length} unique URL(s):\\n\\n`;\n\nfor (const url of uniqueUrls.slice(0, 10)) {\n  try {\n    await nativeFetch(url, { method: 'HEAD', timeout: 5000 });\n    result += `✅ ${url}\\n`;\n  } catch(e) {\n    result += `❌ ${url} (${e.message})\\n`;\n  }\n}\n\nif (uniqueUrls.length > 10) {\n  result += `\\n... and ${uniqueUrls.length - 10} more URLs (showing first 10)`;\n}\n\nreturn result;",
+  "language": "javascript",
+  "timeout": 30,
+  "version": 1,
+  "supportedTypes": ["text", "markdown"],
+  "estimatedManualTimeSeconds": 120
+}

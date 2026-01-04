@@ -1,0 +1,11 @@
+{
+  "name": "Word Counter Pro",
+  "description": "Counts words, characters, sentences, and provides reading time estimates.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const text = input.trim();\nconst words = text.split(/\\s+/).filter(w => w.length > 0).length;\nconst chars = text.length;\nconst charsNoSpaces = text.replace(/\\s/g, '').length;\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;\nconst paragraphs = text.split(/\\n\\n+/).filter(p => p.trim().length > 0).length;\nconst readingTime = Math.ceil(words / 200);\nconst speakingTime = Math.ceil(words / 150);\n\nreturn `📊 Text Statistics\\n\\n` +\n  `Words: ${words}\\n` +\n  `Characters: ${chars} (${charsNoSpaces} without spaces)\\n` +\n  `Sentences: ${sentences}\\n` +\n  `Paragraphs: ${paragraphs}\\n\\n` +\n  `⏱️ Time Estimates\\n` +\n  `Reading time: ${readingTime} min\\n` +\n  `Speaking time: ${speakingTime} min`;",
+  "language": "javascript",
+  "timeout": 5,
+  "version": 1,
+  "supportedTypes": ["text", "markdown"],
+  "estimatedManualTimeSeconds": 20
+}

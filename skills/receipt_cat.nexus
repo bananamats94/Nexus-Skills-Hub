@@ -1,0 +1,11 @@
+{
+  "name": "Receipt Categorizer",
+  "description": "Extracts expense data from receipts and categorizes them for accounting.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Analyze this receipt and extract expense information. Return ONLY valid JSON:\n{\n  \"merchant\": \"Store or restaurant name\",\n  \"total\": \"19.99\",\n  \"currency\": \"USD\",\n  \"date\": \"2026-01-04\",\n  \"category\": \"food\" | \"transport\" | \"office\" | \"entertainment\" | \"utilities\" | \"other\",\n  \"items\": [\"item1\", \"item2\"],\n  \"payment_method\": \"card\" | \"cash\" | \"unknown\"\n}\n\nChoose the most appropriate category based on the merchant and items. Use null for missing fields. Do not add text before or after the JSON.",
+  "language": "ai",
+  "timeout": 25,
+  "version": 1,
+  "supportedTypes": ["image", "pdf", "text"],
+  "estimatedManualTimeSeconds": 180
+}

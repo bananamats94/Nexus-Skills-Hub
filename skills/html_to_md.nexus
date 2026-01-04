@@ -1,0 +1,11 @@
+{
+  "name": "HTML to Markdown",
+  "description": "Converts HTML to clean Markdown format for easy editing.",
+  "author": "Nexus Essentials",
+  "sourceCode": "// Simple HTML to Markdown converter\nlet md = input;\n\n// Headers\nmd = md.replace(/<h1>(.*?)<\\/h1>/gi, '# $1\\n');\nmd = md.replace(/<h2>(.*?)<\\/h2>/gi, '## $1\\n');\nmd = md.replace(/<h3>(.*?)<\\/h3>/gi, '### $1\\n');\n\n// Bold and Italic\nmd = md.replace(/<strong>(.*?)<\\/strong>/gi, '**$1**');\nmd = md.replace(/<em>(.*?)<\\/em>/gi, '*$1*');\nmd = md.replace(/<b>(.*?)<\\/b>/gi, '**$1**');\nmd = md.replace(/<i>(.*?)<\\/i>/gi, '*$1*');\n\n// Links\nmd = md.replace(/<a href=\\\"(.*?)\\\">(.*?)<\\/a>/gi, '[$2]($1)');\n\n// Code\nmd = md.replace(/<code>(.*?)<\\/code>/gi, '`$1`');\nmd = md.replace(/<pre>(.*?)<\\/pre>/gis, '```\\n$1\\n```');\n\n// Lists\nmd = md.replace(/<li>(.*?)<\\/li>/gi, '- $1');\nmd = md.replace(/<\\/?ul>/gi, '');\nmd = md.replace(/<\\/?ol>/gi, '');\n\n// Paragraphs\nmd = md.replace(/<p>(.*?)<\\/p>/gi, '$1\\n\\n');\nmd = md.replace(/<br\\s*\\/?>/gi, '\\n');\n\n// Clean up remaining HTML tags\nmd = md.replace(/<[^>]+>/g, '');\n\nreturn md.trim();",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["text", "code"],
+  "estimatedManualTimeSeconds": 120
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Alpha-Sort",
+  "description": "Sorts lists alphabetically, removing any duplicates.",
+  "author": "Nexus Essentials",
+  "sourceCode": "const lines = input.split('\n').filter(l => l.trim().length > 0); return Array.from(new Set(lines)).sort().join('\n');",
+  "language": "javascript",
+  "timeout": 5,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 30
+}

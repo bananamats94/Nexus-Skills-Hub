@@ -1,0 +1,11 @@
+{
+  "name": "URL Slug Generator",
+  "description": "Converts titles into URL-friendly slugs (lowercase, hyphenated, no special chars).",
+  "author": "Nexus Essentials",
+  "sourceCode": "let slug = input.trim();\n\n// Convert to lowercase\nslug = slug.toLowerCase();\n\n// Replace spaces and underscores with hyphens\nslug = slug.replace(/[\\s_]+/g, '-');\n\n// Remove special characters (keep letters, numbers, hyphens)\nslug = slug.replace(/[^a-z0-9-]/g, '');\n\n// Remove multiple consecutive hyphens\nslug = slug.replace(/-+/g, '-');\n\n// Remove leading/trailing hyphens\nslug = slug.replace(/^-+|-+$/g, '');\n\n// Limit length to 60 characters\nif (slug.length > 60) {\n  slug = slug.substring(0, 60).replace(/-[^-]*$/, '');\n}\n\nreturn slug || 'invalid-slug';",
+  "language": "javascript",
+  "timeout": 5,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 15
+}

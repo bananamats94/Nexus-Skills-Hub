@@ -1,0 +1,12 @@
+{
+  "name": "URL Shortener",
+  "description": "Shortens long URLs using TinyURL API for easy sharing.",
+  "author": "Nexus Essentials",
+  "sourceCode": "// Extract URL from input\nconst urlMatch = input.match(/https?:\\/\\/[^\\s]+/);\nif (!urlMatch) return 'No valid URL found in input';\n\nconst longUrl = urlMatch[0];\n\n// Use TinyURL API (no auth required)\nconst apiUrl = 'https://tinyurl.com/api-create.php?url=' + encodeURIComponent(longUrl);\n\ntry {\n  const shortUrl = await nativeFetch(apiUrl);\n  return `Original: ${longUrl}\\n\\nShortened: ${shortUrl}`;\n} catch(e) {\n  return 'Error shortening URL: ' + e.message;\n}",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["url", "text"],
+  "estimatedManualTimeSeconds": 30,
+  "networkAllowlist": "tinyurl.com"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Business Card Scanner",
+  "description": "Extracts contact information from business card photos into structured vCard format.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Extract contact information from this business card and return ONLY valid JSON:\n{\n  \"name\": \"Full Name\",\n  \"company\": \"Company Name\",\n  \"title\": \"Job Title\",\n  \"phone\": \"+1234567890\",\n  \"email\": \"email@example.com\",\n  \"address\": \"Full address\",\n  \"website\": \"https://...\"\n}\n\nIf a field is not visible, use null. Do not add any text before or after the JSON.",
+  "language": "ai",
+  "timeout": 25,
+  "version": 2,
+  "supportedTypes": ["image"],
+  "estimatedManualTimeSeconds": 180
+}

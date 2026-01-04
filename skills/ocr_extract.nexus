@@ -1,0 +1,11 @@
+{
+  "name": "OCR Text Extractor",
+  "description": "Extracts all visible text from images and screenshots using vision AI.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Extract all visible text from this image. Return only the text content, preserving line breaks and structure. Do not add commentary or explanations.",
+  "language": "ai",
+  "timeout": 30,
+  "version": 1,
+  "supportedTypes": ["image"],
+  "estimatedManualTimeSeconds": 120
+}

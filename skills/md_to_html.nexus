@@ -1,0 +1,11 @@
+{
+  "name": "Markdown to HTML",
+  "description": "Converts Markdown to clean HTML with proper formatting and styling.",
+  "author": "Nexus Essentials",
+  "sourceCode": "// Simple Markdown to HTML converter\nlet html = input;\n\n// Headers\nhtml = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');\nhtml = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');\nhtml = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');\n\n// Bold and Italic\nhtml = html.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>');\nhtml = html.replace(/\\*(.+?)\\*/g, '<em>$1</em>');\n\n// Links\nhtml = html.replace(/\\[(.+?)\\]\\((.+?)\\)/g, '<a href=\"$2\">$1</a>');\n\n// Code blocks\nhtml = html.replace(/```([\\s\\S]*?)```/g, '<pre><code>$1</code></pre>');\nhtml = html.replace(/`(.+?)`/g, '<code>$1</code>');\n\n// Lists\nhtml = html.replace(/^- (.+)$/gm, '<li>$1</li>');\nhtml = html.replace(/(<li>.*<\\/li>)/s, '<ul>$1</ul>');\n\n// Paragraphs\nhtml = html.replace(/^(?!<[h\\/ul])(.+)$/gm, '<p>$1</p>');\n\nreturn html;",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["markdown", "text"],
+  "estimatedManualTimeSeconds": 120
+}

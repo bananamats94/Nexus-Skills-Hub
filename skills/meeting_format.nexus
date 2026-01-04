@@ -1,0 +1,11 @@
+{
+  "name": "Meeting Notes Formatter",
+  "description": "Structures raw meeting notes into professional format with action items.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Format these meeting notes into a professional structure:\n\n# Meeting Notes\n**Date:** [extract date]\n**Attendees:** [list names]\n\n## Agenda\n1. [topic 1]\n2. [topic 2]\n\n## Discussion Summary\n[2-3 paragraphs summarizing main points]\n\n## Decisions Made\n- [decision 1]\n- [decision 2]\n\n## Action Items\n- [ ] [Person] - [task] - [deadline]\n- [ ] [Person] - [task] - [deadline]\n\n## Next Steps\n- Next meeting: [date]\n- Follow-up: [details]",
+  "language": "ai",
+  "timeout": 25,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 300
+}

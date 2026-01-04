@@ -1,0 +1,13 @@
+{
+  "name": "DeepL Magic",
+  "description": "Uses DeepL API for perfect translations directly from clipboard.",
+  "author": "Nexus Essentials",
+  "sourceCode": "if (!env.DEEPL_API_KEY) return 'Please set DEEPL_API_KEY in Settings.'; const body = 'auth_key=' + env.DEEPL_API_KEY + '&text=' + encodeURIComponent(input) + '&target_lang=EN'; const resp = await nativeFetch('https://api-free.deepl.com/v2/translate', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body }); return JSON.parse(resp).translations[0].text;",
+  "language": "javascript",
+  "timeout": 10,
+  "version": 1,
+  "supportedTypes": ["text"],
+  "estimatedManualTimeSeconds": 120,
+  "networkAllowlist": "api-free.deepl.com,api.deepl.com",
+  "authorizedSecrets": ["DEEPL_API_KEY"]
+}

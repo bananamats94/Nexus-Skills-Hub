@@ -1,0 +1,11 @@
+{
+  "name": "Contract Key Points",
+  "description": "Extracts critical terms, obligations, and dates from legal contracts.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Analyze this contract and extract key information:\n\n## Parties Involved\n[List all parties]\n\n## Key Terms\n- Duration: [dates]\n- Payment terms: [details]\n- Termination clause: [summary]\n\n## Obligations\n### Party A:\n- [obligation 1]\n- [obligation 2]\n\n### Party B:\n- [obligation 1]\n- [obligation 2]\n\n## Important Dates\n- [date 1]: [event]\n- [date 2]: [event]\n\n## Risk Factors\n- [risk 1]\n- [risk 2]\n\nFocus on decision-critical information.",
+  "language": "ai",
+  "timeout": 40,
+  "version": 1,
+  "supportedTypes": ["pdf", "text"],
+  "estimatedManualTimeSeconds": 900
+}

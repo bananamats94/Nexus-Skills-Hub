@@ -1,0 +1,11 @@
+{
+  "name": "The Editor",
+  "description": "Fixes spelling and grammar while keeping your personal style.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Fix all spelling and grammar mistakes in the following text. Do not change the overall tone or meaning. Return only the corrected text.",
+  "language": "ai",
+  "timeout": 15,
+  "version": 1,
+  "supportedTypes": ["text", "markdown"],
+  "estimatedManualTimeSeconds": 120
+}

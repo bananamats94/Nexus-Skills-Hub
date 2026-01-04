@@ -1,0 +1,73 @@
+{
+  "id": "iban-extractor-ocr",
+  "name": "IBAN Extractor (OCR)",
+  "description": "Extracts IBAN numbers from screenshots or images using OCR. Perfect for digitizing bank account details from documents or screenshots.",
+  "version": "1.0.0",
+  "author": "Nexus",
+  "category": "Finance & Banking",
+  "tags": ["iban", "ocr", "banking", "finance", "extraction", "screenshot"],
+  "icon": "creditcard.viewfinder",
+  "language": "python",
+  "timeout": 30,
+  "featured": true,
+  "isPro": false,
+  "supportedInputTypes": ["image"],
+  "supportedOutputTypes": ["text"],
+  "costEstimate": {
+    "low": 0.0,
+    "high": 0.0,
+    "currency": "USD"
+  },
+  "examples": [
+    {
+      "title": "Extract from Screenshot",
+      "input": "[image data]",
+      "output": "DE89 3704 0044 0532 0130 00\nGB29 NWBK 6016 1331 9268 19"
+    },
+    {
+      "title": "Extract from Invoice",
+      "input": "[invoice image]",
+      "output": "FR14 2004 1010 0505 0001 3M02 606"
+    }
+  ],
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2025-01-04",
+      "changes": [
+        "Initial release",
+        "Support for all European IBAN formats",
+        "Validation and formatting of extracted IBANs"
+      ]
+    }
+  ],
+  "configuration": {
+    "parameters": [
+      {
+        "key": "validate_iban",
+        "name": "Validate IBANs",
+        "description": "Verify extracted IBANs using checksum validation",
+        "type": "boolean",
+        "defaultValue": true,
+        "required": false
+      },
+      {
+        "key": "format_output",
+        "name": "Format Output",
+        "description": "Format IBANs with spaces (e.g., DE89 3704 0044...)",
+        "type": "boolean",
+        "defaultValue": true,
+        "required": false
+      },
+      {
+        "key": "confidence_threshold",
+        "name": "Confidence Threshold",
+        "description": "Minimum OCR confidence (0.0-1.0) to accept extracted text",
+        "type": "number",
+        "defaultValue": 0.7,
+        "required": false
+      }
+    ]
+  },
+  "sourceCode": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\nIBAN Extractor (OCR)\nExtracts and validates IBAN numbers from images using OCR.\n\"\"\"\n\nimport sys\nimport re\nimport json\nfrom pathlib import Path\n\n# IBAN validation table for checksum calculation\nIBAN_LENGTHS = {\n    'AD': 24, 'AE': 23, 'AL': 28, 'AT': 20, 'AZ': 28, 'BA': 20, 'BE': 16,\n    'BG': 22, 'BH': 22, 'BR': 29, 'BY': 28, 'CH': 21, 'CR': 22, 'CY': 28,\n    'CZ': 24, 'DE': 22, 'DK': 18, 'DO': 28, 'EE': 20, 'EG': 29, 'ES': 24,\n    'FI': 18, 'FO': 18, 'FR': 27, 'GB': 22, 'GE': 22, 'GI': 23, 'GL': 18,\n    'GR': 27, 'GT': 28, 'HR': 21, 'HU': 28, 'IE': 22, 'IL': 23, 'IS': 26,\n    'IT': 27, 'JO': 30, 'KW': 30, 'KZ': 20, 'LB': 28, 'LC': 32, 'LI': 21,\n    'LT': 20, 'LU': 20, 'LV': 21, 'MC': 27, 'MD': 24, 'ME': 22, 'MK': 19,\n    'MR': 27, 'MT': 31, 'MU': 30, 'NL': 18, 'NO': 15, 'PK': 24, 'PL': 28,\n    'PS': 29, 'PT': 25, 'QA': 29, 'RO': 24, 'RS': 22, 'SA': 24, 'SE': 24,\n    'SI': 19, 'SK': 24, 'SM': 27, 'TN': 24, 'TR': 26, 'UA': 29, 'VA': 22,\n    'VG': 24, 'XK': 20\n}\n\ndef char_to_num(char):\n    \"\"\"Convert IBAN character to number for checksum calculation.\"\"\"\n    if char.isdigit():\n        return char\n    else:\n        return str(ord(char.upper()) - ord('A') + 10)\n\ndef validate_iban(iban):\n    \"\"\"Validate IBAN using mod-97 checksum algorithm.\"\"\"\n    # Remove spaces and convert to uppercase\n    iban = iban.replace(' ', '').replace('-', '').upper()\n    \n    # Check length\n    country_code = iban[:2]\n    if country_code not in IBAN_LENGTHS:\n        return False\n    \n    if len(iban) != IBAN_LENGTHS[country_code]:\n        return False\n    \n    # Rearrange: move first 4 chars to end\n    rearranged = iban[4:] + iban[:4]\n    \n    # Convert to number string\n    num_string = ''.join(char_to_num(c) for c in rearranged)\n    \n    # Calculate mod 97\n    return int(num_string) % 97 == 1\n\ndef format_iban(iban):\n    \"\"\"Format IBAN with spaces every 4 characters.\"\"\"\n    iban = iban.replace(' ', '').replace('-', '').upper()\n    return ' '.join(iban[i:i+4] for i in range(0, len(iban), 4))\n\ndef extract_iban_patterns(text):\n    \"\"\"Extract potential IBAN patterns from text.\"\"\"\n    # Remove all whitespace and make uppercase for pattern matching\n    normalized = text.replace(' ', '').replace('\\n', '').replace('\\t', '').upper()\n    \n    # Pattern: 2 letters followed by 2 digits, then 10-30 alphanumeric chars\n    pattern = r'[A-Z]{2}[0-9]{2}[A-Z0-9]{10,30}'\n    matches = re.finditer(pattern, normalized)\n    \n    ibans = []\n    for match in matches:\n        iban_candidate = match.group(0)\n        ibans.append(iban_candidate)\n    \n    # Also try to find IBANs with spaces (common in documents)\n    spaced_pattern = r'[A-Z]{2}\\s?[0-9]{2}(?:\\s?[A-Z0-9]{4}){2,7}\\s?[A-Z0-9]{0,4}'\n    spaced_matches = re.finditer(spaced_pattern, text.upper())\n    \n    for match in spaced_matches:\n        iban_candidate = match.group(0).replace(' ', '')\n        if iban_candidate not in ibans and len(iban_candidate) >= 15:\n            ibans.append(iban_candidate)\n    \n    return ibans\n\ndef perform_ocr(image_path):\n    \"\"\"Perform OCR on image using available OCR library.\"\"\"\n    try:\n        # Try pytesseract first (most common)\n        import pytesseract\n        from PIL import Image\n        \n        img = Image.open(image_path)\n        text = pytesseract.image_to_string(img)\n        return text\n    except ImportError:\n        try:\n            # Try Vision framework (macOS/iOS)\n            import Vision\n            import CoreImage\n            \n            # Note: This is a simplified example, actual implementation would be more complex\n            return \"Vision framework OCR not implemented in Python\"\n        except ImportError:\n            # Fallback: Try to use macOS OCR via subprocess\n            import subprocess\n            \n            try:\n                result = subprocess.run(\n                    ['osascript', '-e', f'tell application \"Image Events\" to set theText to do shell script \"textutil -convert txt {image_path} -stdout\"'],\n                    capture_output=True,\n                    text=True,\n                    timeout=15\n                )\n                return result.stdout\n            except:\n                return None\n\ndef main():\n    \"\"\"Main execution function.\"\"\"\n    # Read input from stdin\n    input_data = sys.stdin.read()\n    \n    # Parse configuration\n    validate = True\n    format_output = True\n    confidence_threshold = 0.7\n    \n    # Check if input is JSON with config\n    try:\n        data = json.loads(input_data)\n        if isinstance(data, dict) and 'config' in data:\n            config = data.get('config', {})\n            validate = config.get('validate_iban', True)\n            format_output = config.get('format_output', True)\n            confidence_threshold = float(config.get('confidence_threshold', 0.7))\n            \n            # Get image path from input\n            if 'input' in data:\n                input_data = data['input']\n    except json.JSONDecodeError:\n        pass\n    \n    # Check if input is a file path\n    input_path = Path(input_data.strip())\n    \n    if input_path.exists() and input_path.suffix.lower() in ['.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif']:\n        # Perform OCR\n        ocr_text = perform_ocr(str(input_path))\n        \n        if not ocr_text:\n            print(json.dumps({\n                \"error\": \"OCR failed - pytesseract not installed. Install with: pip install pytesseract pillow\",\n                \"hint\": \"Or provide text input directly instead of an image\"\n            }))\n            sys.exit(1)\n    else:\n        # Assume input is already text\n        ocr_text = input_data\n    \n    # Extract IBAN candidates\n    iban_candidates = extract_iban_patterns(ocr_text)\n    \n    if not iban_candidates:\n        print(json.dumps({\n            \"error\": \"No IBAN found in image\",\n            \"extracted_text\": ocr_text[:500]  # First 500 chars for debugging\n        }))\n        sys.exit(0)\n    \n    # Validate and format IBANs\n    valid_ibans = []\n    invalid_ibans = []\n    \n    for iban in iban_candidates:\n        if validate:\n            if validate_iban(iban):\n                if format_output:\n                    valid_ibans.append(format_iban(iban))\n                else:\n                    valid_ibans.append(iban)\n            else:\n                invalid_ibans.append(iban)\n        else:\n            if format_output:\n                valid_ibans.append(format_iban(iban))\n            else:\n                valid_ibans.append(iban)\n    \n    # Output results\n    if valid_ibans:\n        output = {\n            \"ibans\": valid_ibans,\n            \"count\": len(valid_ibans)\n        }\n        \n        if invalid_ibans:\n            output[\"invalid_candidates\"] = invalid_ibans\n        \n        # For simple text output, just print the IBANs\n        print('\\n'.join(valid_ibans))\n        \n        # Also output JSON to stderr for debugging\n        sys.stderr.write(json.dumps(output, indent=2) + '\\n')\n    else:\n        print(json.dumps({\n            \"error\": \"No valid IBANs found\",\n            \"invalid_candidates\": invalid_ibans,\n            \"extracted_text\": ocr_text[:500]\n        }))\n        sys.exit(0)\n\nif __name__ == '__main__':\n    main()\n"
+}

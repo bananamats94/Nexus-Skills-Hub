@@ -1,0 +1,11 @@
+{
+  "name": "XML to JSON",
+  "description": "Converts XML data to JSON format for easier processing.",
+  "author": "Nexus Essentials",
+  "sourceCode": "Convert this XML to JSON format. Parse all tags and attributes into a structured JSON object. Return only valid JSON, no explanations.",
+  "language": "ai",
+  "timeout": 20,
+  "version": 1,
+  "supportedTypes": ["text", "code"],
+  "estimatedManualTimeSeconds": 90
+}
